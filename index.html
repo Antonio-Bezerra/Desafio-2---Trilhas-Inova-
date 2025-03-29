@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="imagensparafornulario/favicon-32x32.png" type="image/png">
     <title>Formulário de inscrição</title>
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <header>
-    </header>
+    
     <main id="principal">
         <section class="principal-formulario">
             <div class="voltar">
@@ -17,7 +17,7 @@
             <h2 class="principal-formulario-titulo">Formulário de inscrição</h2>
             <p class="principal-formulario-texto-um">Preencha os dados abaixo para fazer sua inscrição no Programa Trilhas.</p>
             
-            <form id="form" action="/action_page.php" method="post">
+            <form id="form">
 
                 <div class="formulario-primeiro-bloco">
                     <p class="primeiro-bloco-texto"><strong>Informações do participante</strong></p>
@@ -49,7 +49,7 @@
 
                     <div>
                         <label for="email">E-mail</label><br>
-                        <input type="email" name="email" id="email">
+                        <input type="email" name="email" id="email" autocomplete="email">
                     </div>
 
                     <div>
@@ -73,7 +73,7 @@
 
                     <div>
                         <label for="cep">CEP</label><br>
-                        <input type="text" name="cep" id="cep" onblur="buscarCep(this.value)">
+                        <input type="text" name="cep" id="cep" onblur="buscarCep(this.value)" autocomplete="cep">
                     </div>
 
                     <div class="formulario-segundo-bloco-metade">
@@ -157,7 +157,7 @@
 
                 <div class="botao-final">
                     <input class="cancelar" type="reset" value="Cancelar">
-                    <input class="fazer-inscricao" type="submit" value="Fazer inscrição">
+                    <button class="fazer-inscricao" onclick="enviarERedirecionar()">Fazer inscrição</button>
                 </div>
                 
 

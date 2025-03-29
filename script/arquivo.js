@@ -13,6 +13,15 @@ let estado = document.getElementById("estado");
 let comprovanteDeIdentidade = document.getElementById("identidade");
 let comprovanteDeResidencia = document.getElementById("residencia");
 
+document.querySelector('.mostrar-senha').addEventListener('click', function() {
+    const senhaInput = document.getElementById('senha');
+    const tipoAtual = senhaInput.getAttribute('type');
+    
+    senhaInput.setAttribute('type', tipoAtual === 'password' ? 'text' : 'password');
+    
+    this.textContent = tipoAtual === 'password' ? '👀' : '🙈';
+});
+
 
 form.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -23,12 +32,12 @@ form.addEventListener("submit", (event) => {
     }
 
     if(data.value ===""){
-        alert("Por favor , preencha com sua data de nascimento");
+        alert("Por favor, preencha com sua data de nascimento");
         return;
     }
 
     if (cpf.value ==="" || !validaDigitosCpf(cpf.value, 14)) {
-        alert("Por favor , preencha corretamente ,o CPF deve conter 11 dígitos.");
+        alert("Por favor, preencha corretamente, o CPF deve conter 11 dígitos.");
         return;
     }
 
@@ -60,23 +69,23 @@ form.addEventListener("submit", (event) => {
     }
 
     if(cidade.value === ""){
-        alert("Por favor , preencha com o nome da sua cidade");
+        alert("Por favor, preencha com o nome da sua cidade");
         return ; 
 
     }
 
     if(estado.value === ""){
-        alert("Por favor , preencha com o nome do seu estado (MA)");
+        alert("Por favor, preencha com o nome do seu estado (MA)");
         return;
     }
     
     if(comprovanteDeIdentidade.value === ""){
-        alert("Por favor , anexe o documento de identidade");
+        alert("Por favor, anexe o documento de identidade");
         return;
     }
 
     if(comprovanteDeResidencia.value === ""){
-        alert("Por favor , anexe o comprovante de Residência ");
+        alert("Por favor, anexe o comprovante de Residência ");
         return ;
     }
 
